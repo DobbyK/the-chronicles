@@ -1,12 +1,13 @@
+var fs = require('fs');
 const http = require('http');
-
-const hostname = '127.0.0.1';
-const port = 3000;
+const index = fs.readFileSync('site/index.html');
+const hostname = '0.0.0.0';
+const port = 8080;
 
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('The Chronicles');
+  res.setHeader('Content-Type', 'text/html');
+  res.end(index);
 });
 
 server.listen(port, hostname, () => {
