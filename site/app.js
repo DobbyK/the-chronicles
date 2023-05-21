@@ -1,3 +1,5 @@
+// Fix Up This Variable stuff later
+
 var fs = require('fs');
 const http = require('http');
 const index = fs.readFileSync('site/index.html');
